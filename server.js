@@ -35,6 +35,13 @@ app.delete('/allPokemon/:id', (req, res) => {
     res.redirect('/allPokemon');
 });
 
+//CREATE
+app.post('/allPokemon', (req, res) => {
+    console.log(req.body);
+    allPokes.push(req.body);
+    res.redirect('/allPokemon');
+});
+
 //SHOW
 app.get('/allPokemon/:idx', (req, res) => {
     res.render('show.ejs', {allPoke: allPokes[req.params.idx]});
