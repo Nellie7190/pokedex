@@ -9,11 +9,16 @@
 </head>
 
 <body>
-    <h1>Pokemon</h1>
+    <!-- h1 styling with HTML -->
+    <h1 style="background-color:DodgerBlue;">
+        <center>Pokemon</center>
+    </h1>
     <!-- have pokemon on left and info on right -->
     <table>
         <tr>
-            <td><img src="<%=allPoke.img%>" alt=""></td>
+            <td>
+                <img src="<%=allPoke.img%>" alt="">
+            </td> 
             <td>
                 <ul>
                     <h2>Types:</h2>
@@ -30,11 +35,11 @@
                         <li><%=entry[0]%> = <%=entry[1]%></li>
 
                     <%})%>
-
                     <!-- <li><%=allPoke.stats.hp%></li>                     -->
                 </ul>
             </td>
         </tr>
+        <tr><button>EDIT</button></tr>
     </table>
 </body>
 
