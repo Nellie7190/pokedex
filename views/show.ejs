@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
 </head>
+
 <body>
     <h1>Pokemon</h1>
+    <!-- have pokemon on left and info on right -->
     <table>
         <tr>
             <td><img src="<%=allPoke.img%>" alt=""></td>
             <td>
-            <ul>
-                <!-- for loop for list of types -->
-                <li><%=allPoke.type%></li>
-                <!-- for loop for other data here inside td -->
-            </ul>
+                <ul>
+                    <h2>Types:</h2>
+                    <%allPoke.type.forEach(poke => {%>
+
+                        <li>
+                            <%=poke%>
+                        </li>
+                        <%});%>
+                    <h2>Stats:</h2>
+                    <%Object.entries(allPoke.stats).forEach(entry => {%>
+                        <%const{key: value} = entry;%>
+                        <!-- entry = `${key} = ${value}` -->
+                        <li><%=entry[0]%> = <%=entry[1]%></li>
+
+                    <%})%>
+
+                    <!-- <li><%=allPoke.stats.hp%></li>                     -->
+                </ul>
             </td>
         </tr>
     </table>
 </body>
+
 </html>
+<!-- <%for (let i = 0; i < allPoke.length; i++) {%> -->
+                    <!-- for loop for list of types -->
+                    <li>
+                        <%=allPoke[i].type%>
+                        <%=allPoke[i].stats%>
+                    </li>
+                    <!-- for loop for other data here inside td -->
+                    <!-- <%}%> -->

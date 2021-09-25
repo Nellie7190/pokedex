@@ -19,3 +19,6 @@ app.get('/allPokemon/:idx', (req, res) => {
 app.listen(3000, () => {
     console.log('listening on port:', port)
 })
+
+
+
