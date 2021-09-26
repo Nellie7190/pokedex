@@ -35,11 +35,33 @@ app.delete('/allPokemon/:id', (req, res) => {
     res.redirect('/allPokemon');
 });
 
+//UPDATE
+app.put('/allPokemon/:idx', (req, res) => {
+    allPokes[req.params.index] = req.body
+    req.body.type = req.body.type.split(',');
+    req.body.stats = {
+        hp: req.body.stats[0],
+        attack: req.body.stats[1],
+        defense: req.body.stats[2],
+        spattack: req.body.stats[3],
+        spdefense: req.body.stats[4],
+        speed: req.body.stats[5],
+    }
+    
+})
+
 //CREATE
 app.post('/allPokemon', (req, res) => {
     console.log(req.body);
     allPokes.push(req.body);
     res.redirect('/allPokemon');
+});
+
+//EDIT
+app.get('allPokemon/:idx/edit', (req, res) => {
+    res.render('edit.ejs', {
+        poke: allPokes[req.params.idx],
+    index: req.params.idx});
 });
 
 //SHOW

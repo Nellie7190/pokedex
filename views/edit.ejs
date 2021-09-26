@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pokemon</title>
+</head>
+<body>
+    <h1>Edit Your Pokemon</h1>
+    <form action="/allPokemon/<%=index%>?_method=PUT" method="POST">
+
+        Image<input type="image url" name="" placeholder="img" value="<%=poke.img%>">
+
+        Name<input type="text" name="" placeholder="name" value="<%=poke.name%>"><br>
+        <br>
+
+        Type<input type="text" name="" placeholder="type" value="<%=poke.type%>"><br>
+        <br>
+        
+        HP<input type="text" name="" placeholder="hp" value="<%=poke.hp%>"><br>
+        <br>
+        
+        Attack<input type="text" name="" placeholder="attack" value="<%=poke.attack%>"><br>
+        <br>
+        
+        Defense<input type="text" name="" placeholder="defense" value="<%=poke.defense%>"><br>
+        <br>
+        
+        SP Attack<input type="text" name="" placeholder="sp attack" value="<%=poke.spattack%>"><br>
+        <br>
+        
+        SP Defense<input type="text" name="" placeholder="sp defense" value="<%=poke.spdefense%>"><br>
+        <br>
+        
+        Speed<input type="text" name="" placeholder="speed" value="<%=poke.speed%>"><br>
+        <br>
+
+        <input type="submit" name="Create Pokemon">
+
+    </form>
+</body>
+</html>
