@@ -6,6 +6,9 @@ const port = 3000;
 //DATA
 const allPokes = require('./models/pokedex');
 
+app.use(express.static('css'));
+
+
 //MIDDLEWARE====================================
 app.use((req,res, next) => {
     console.log('I run for all routes');
@@ -30,7 +33,7 @@ app.get('/allPokemon/new', (req, res) => {
 })
 
 //DELETE
-app.delete('/allPokemon/:id', (req, res) => {
+app.delete('/allPokemon/:idx', (req, res) => {
     allPokes.splice(req.params.idx, 1);
     res.redirect('/allPokemon');
 });
