@@ -41,7 +41,7 @@ app.delete('/allPokemon/:idx', (req, res) => {
 //UPDATE
 app.put('/allPokemon/:idx', (req, res) => {
     allPokes[req.params.index] = req.body
-    req.body.type = req.body.type.split(',');
+    req.body.type = req.body.type.split(', ');
     req.body.stats = {
         hp: req.body.stats[0],
         attack: req.body.stats[1],
@@ -50,8 +50,10 @@ app.put('/allPokemon/:idx', (req, res) => {
         spdefense: req.body.stats[4],
         speed: req.body.stats[5],
     }
+    console.log(req.body);
+    res.redirect('/allPokemon/:idx');
     
-})
+});
 
 //CREATE
 app.post('/allPokemon', (req, res) => {
@@ -60,8 +62,10 @@ app.post('/allPokemon', (req, res) => {
     res.redirect('/allPokemon');
 });
 
+
+
 //EDIT
-app.get('allPokemon/:idx/edit', (req, res) => {
+app.get('/allPokemon/:idx/edit', (req, res) => {
     res.render('edit.ejs', {
         poke: allPokes[req.params.idx],
     index: req.params.idx});
@@ -69,7 +73,8 @@ app.get('allPokemon/:idx/edit', (req, res) => {
 
 //SHOW
 app.get('/allPokemon/:idx', (req, res) => {
-    res.render('show.ejs', {allPoke: allPokes[req.params.idx]});
+    // console.log(allPokes[req.params.index].img)
+    res.render('show.ejs', {allPoke: allPokes[req.params.idx], idx: req.params.idx });
 });
 
 

@@ -8,35 +8,36 @@
 </head>
 <body>
     <h1>Edit Your Pokemon</h1>
-    <form action="/allPokemon/<%=index%>?_method=PUT" method="POST">
+    <form action="/allPokemon/<%= index %>?_method=PUT" method="POST">
 
-        Image<input type="image url" name="img" placeholder="img" value="<%=poke.img%>">
-
-        Name<input type="text" name="" placeholder="name" value="<%=poke.name%>"><br>
+        Image<input type="image url" name="img" placeholder="img" value="<%=poke.img%>"><br>
         <br>
 
-        Type<input type="text" name="" placeholder="type" value="<%=poke.type%>"><br>
-        <br>
-        
-        HP<input type="text" name="" placeholder="hp" value="<%=poke.hp%>"><br>
-        <br>
-        
-        Attack<input type="text" name="" placeholder="attack" value="<%=poke.attack%>"><br>
-        <br>
-        
-        Defense<input type="text" name="" placeholder="defense" value="<%=poke.defense%>"><br>
-        <br>
-        
-        SP Attack<input type="text" name="" placeholder="sp attack" value="<%=poke.spattack%>"><br>
-        <br>
-        
-        SP Defense<input type="text" name="" placeholder="sp defense" value="<%=poke.spdefense%>"><br>
-        <br>
-        
-        Speed<input type="text" name="" placeholder="speed" value="<%=poke.speed%>"><br>
+        Name<input type="text" name="name" placeholder="name" value="<%=poke.name%>"><br>
         <br>
 
-        <input type="submit" name="Create Pokemon">
+        Type<input type="text" name="type" placeholder="type" value="<%=poke.type%>"><br>
+        <br>
+        
+        HP<input type="text" name="stats" placeholder="hp" value="<%=poke.stats.hp%>"><br>
+        <br>
+        
+        Attack<input type="text" name="stats" placeholder="attack" value="<%=poke.stats.attack%>"><br>
+        <br>
+        
+        Defense<input type="text" name="stats" placeholder="defense" value="<%=poke.stats.defense%>"><br>
+        <br>
+        
+        SP Attack<input type="text" name="stats" placeholder="sp attack" value="<%=poke.stats.spattack%>"><br>
+        <br>
+        
+        SP Defense<input type="text" name="stats" placeholder="sp defense" value="<%=poke.stats.spdefense%>"><br>
+        <br>
+        
+        Speed<input type="text" name="stats" placeholder="speed" value="<%=poke.stats.speed%>"><br>
+        <br>
+
+        <input type="submit" value="Edit Pokemon">
 
     </form>
 </body>
