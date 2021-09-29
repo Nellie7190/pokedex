@@ -40,7 +40,7 @@ app.delete('/allPokemon/:idx', (req, res) => {
 
 //UPDATE
 app.put('/allPokemon/:idx', (req, res) => {
-    allPokes[req.params.index] = req.body
+    allPokes[req.params.idx] = req.body
     req.body.type = req.body.type.split(', ');
     req.body.stats = {
         hp: req.body.stats[0],
@@ -51,7 +51,7 @@ app.put('/allPokemon/:idx', (req, res) => {
         speed: req.body.stats[5],
     }
     console.log(req.body);
-    res.redirect('/allPokemon/:idx');
+    res.redirect(`/allPokemon/${req.params.idx}`);
     
 });
 
